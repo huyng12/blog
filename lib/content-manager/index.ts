@@ -21,7 +21,8 @@ interface ContentManagerGeneric {
 }
 
 class ContentManager implements ContentManagerGeneric {
-	root: string;
+	private root: string;
+
 	constructor() {
 		this.root = path.resolve("posts");
 	}
@@ -32,11 +33,11 @@ class ContentManager implements ContentManagerGeneric {
 			.map((filename) => filename.split(".")[0]);
 	}
 
-	getMdx(slug: string): string {
+	private getMdx(slug: string): string {
 		return fs.readFileSync(path.join(this.root, `${slug}.mdx`), "utf-8");
 	}
 
-	parse(mdx: string): Omit<Post, "slug"> {
+	private parse(mdx: string): Omit<Post, "slug"> {
 		const { data: meta, content } = matter(mdx);
 		return {
 			content,

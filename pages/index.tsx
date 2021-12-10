@@ -1,16 +1,9 @@
-import { AppPage } from "app/page/page";
-import type { NextPage } from "next";
-import Head from "next/head";
+import { Page } from "page/page";
 
-const Home: NextPage = () => (
-	<AppPage>
-		<Head>
-			<title>nguyenrk.com</title>
-		</Head>
-		<div>
+export default function Home() {
+	return (
+		<Page>
 			<h1>Home</h1>
-		</div>
-	</AppPage>
-);
-
-export default Home;
+		</Page>
+	);
+}

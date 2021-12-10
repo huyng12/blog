@@ -16,6 +16,7 @@ export interface Post {
 }
 
 interface ContentManagerGeneric {
+	getSlugs: () => string[];
 	getPosts: () => Post[];
 	getPostBySlug: (slug: string) => Post;
 }

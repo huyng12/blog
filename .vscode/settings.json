@@ -9,5 +9,11 @@
 		"**/.next": true,
 		"**/node_modules": true,
 		"**/.DS_Store": true
+	},
+	"[plaintext]": {
+		"editor.unicodeHighlight.ambiguousCharacters": false,
+		"editor.wordWrap": "on",
+		"editor.quickSuggestions": false,
+		"editor.rulers": [80]
 	}
 }

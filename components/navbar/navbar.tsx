@@ -31,7 +31,10 @@ export function Navbar() {
 			<div className="ml-[-0.60rem]">
 				<NavItem href="/" label="Home" />
 				<NavItem href="https://github.com/huyng12" label="Github" />
-				<NavItem href="mailto:touch@nguyenrk.com" label="Email" />
+				<NavItem
+					href="https://www.linkedin.com/in/rknguyen12/"
+					label="LinkedIn"
+				/>
 			</div>
 		</nav>
 	);

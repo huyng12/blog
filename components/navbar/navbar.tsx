@@ -28,9 +28,11 @@ function NavItem(props: NavItemProps) {
 export function Navbar() {
 	return (
 		<nav className={s.nav}>
-			<NavItem href="/" label="Home" />
-			<NavItem href="https://github.com/huyng12" label="Github" />
-			<NavItem href="mailto:touch@nguyenrk.com" label="Email" />
+			<div className="ml-[-0.60rem]">
+				<NavItem href="/" label="Home" />
+				<NavItem href="https://github.com/huyng12" label="Github" />
+				<NavItem href="mailto:touch@nguyenrk.com" label="Email" />
+			</div>
 		</nav>
 	);
 }

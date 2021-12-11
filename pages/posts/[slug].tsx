@@ -1,9 +1,9 @@
 import { Page } from "components/page/page";
+import { Tag } from "components/tag/tag";
 import { contentManager, Post } from "lib/content-manager";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
-import Link from "next/link";
 
 interface Props {
 	post: Post;
@@ -11,14 +11,20 @@ interface Props {
 }
 
 export default function PostPage(props: Props) {
+	const { mdxRemoteProps, post } = props;
+	const { meta } = post;
 	return (
-		<Page title={props.post.meta.title}>
-			<Link href="/">
-				<a>
-					<p>Back to home</p>
-				</a>
-			</Link>
-			<MDXRemote {...props.mdxRemoteProps} />
+		<Page title={meta.title}>
+			<div className="max-w-2xl mx-auto space-y-4 pb-8 prose prose-lg">
+				<div className="space-x-2">
+					{meta.tags.map((tag) => (
+						<Tag key={`tag-${tag}`}>{tag}</Tag>
+					))}
+				</div>
+				<h1>{meta.title}</h1>
+				<p className="text-gray-600">Published on {meta.postedAt}</p>
+				<MDXRemote {...mdxRemoteProps} />
+			</div>
 		</Page>
 	);
 }

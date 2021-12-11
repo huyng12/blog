@@ -3,4 +3,5 @@
 	@apply rounded;
 	@apply bg-green-200 text-green-800;
 	@apply text-xs;
+	@apply select-none;
 }

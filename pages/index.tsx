@@ -10,7 +10,7 @@ interface Props {
 export default function HomePage(props: Props) {
 	return (
 		<Page>
-			<div className="max-w-2xl mx-auto space-y-4">
+			<div className="max-w-2xl mx-auto space-y-4 pb-8">
 				{props.posts.map((post) => (
 					<PostCard key={post.slug} post={post} />
 				))}

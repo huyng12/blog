@@ -53,7 +53,12 @@ class ContentManager implements ContentManagerGeneric {
 
 	getPosts(): Post[] {
 		const slugs = this.getSlugs();
-		return slugs.map((slug) => this.getPostBySlug(slug));
+		const posts = slugs.map((slug) => this.getPostBySlug(slug));
+		return posts.sort(
+			(p1, p2) =>
+				new Date(p2.meta.postedAt).getTime() -
+				new Date(p1.meta.postedAt).getTime()
+		);
 	}
 }
 

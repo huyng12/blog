@@ -1,5 +1,6 @@
 import { Tag } from "components/tag/tag";
 import { Post } from "lib/content-manager";
+import format from "lib/format";
 import { useRouter } from "next/router";
 import s from "./post-card.module.css";
 
@@ -15,7 +16,7 @@ export function PostCard(props: Props) {
 		<article className={s.article} onClick={onClick}>
 			<div className={s.meta}>
 				<Tag>{meta.tags[0]}</Tag>
-				<span>{meta.postedAt}</span>
+				<span>{format.datetime(meta.postedAt)}</span>
 			</div>
 			<h1 className="text-2xl font-bold">{meta.title}</h1>
 			<p>{meta.summary}</p>

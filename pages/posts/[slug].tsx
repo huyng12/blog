@@ -1,6 +1,7 @@
 import { Page } from "components/page/page";
 import { Tag } from "components/tag/tag";
 import { contentManager, Post } from "lib/content-manager";
+import format from "lib/format";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
@@ -22,7 +23,9 @@ export default function PostPage(props: Props) {
 					))}
 				</div>
 				<h1>{meta.title}</h1>
-				<p className="text-gray-600">Published on {meta.postedAt}</p>
+				<p className="text-gray-600">
+					Published on {format.datetime(meta.postedAt)}
+				</p>
 				<MDXRemote {...mdxRemoteProps} />
 			</div>
 		</Page>

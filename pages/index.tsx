@@ -10,8 +10,8 @@ interface Props {
 export default function HomePage(props: Props) {
 	return (
 		<Page>
-			<div className="max-w-xl mx-auto space-y-4">
-				{[...props.posts, ...props.posts].map((post) => (
+			<div className="max-w-2xl mx-auto space-y-4">
+				{props.posts.map((post) => (
 					<PostCard key={post.slug} post={post} />
 				))}
 			</div>

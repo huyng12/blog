@@ -1,0 +1,14 @@
+.nav {
+	@apply max-w-2xl mx-auto;
+}
+
+.navItem {
+	@apply px-3 py-2;
+	@apply rounded-md;
+	@apply text-gray-600;
+	@apply hover:bg-gray-100;
+}
+
+.navItemActive {
+	@apply text-gray-900 font-bold;
+}

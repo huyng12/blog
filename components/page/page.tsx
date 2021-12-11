@@ -1,3 +1,4 @@
+import { Navbar } from "components/navbar/navbar";
 import Head from "next/head";
 import { ReactNode } from "react";
 import s from "./page.module.css";
@@ -20,7 +21,12 @@ export function Page(props: Props) {
 			<Head>
 				<title>{meta.title}</title>
 			</Head>
-			<main>{props.children}</main>
+			<div className="px-8">
+				<div className="py-8">
+					<Navbar />
+				</div>
+				<main>{props.children}</main>
+			</div>
 		</div>
 	);
 }

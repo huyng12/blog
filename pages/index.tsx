@@ -21,7 +21,7 @@ export default function HomePage(props: Props) {
 						cryptocurrency and NFT.
 					</p>
 				</div>
-				<div className="space-y-2">
+				<div className="space-y-4">
 					<h1 className="font-bold text-3xl">Blogs</h1>
 					{props.posts.map((post) => (
 						<PostCard key={post.slug} post={post} />

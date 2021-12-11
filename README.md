@@ -1,3 +1,3 @@
-## blog: Work-in-progress personal blog
+## blog
 
-Thoughts, technical posts and many interesting things.
+My personal blog where I share thoughts, technical posts and many interesting things.

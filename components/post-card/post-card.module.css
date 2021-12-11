@@ -1,0 +1,15 @@
+.article {
+	@apply px-5 py-3 space-y-2;
+	@apply cursor-pointer;
+	@apply select-none;
+	@apply rounded-md;
+	@apply hover:shadow-lg;
+	@apply bg-gray-100 hover:bg-gray-800;
+	@apply text-gray-900 hover:text-gray-50;
+	@apply transition ease-linear duration-100;
+}
+
+.meta {
+	@apply text-xs;
+	@apply space-x-2;
+}

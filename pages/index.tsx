@@ -1,7 +1,7 @@
 import { Page } from "components/page/page";
+import { PostCard } from "components/post-card/post-card";
 import { contentManager, Post } from "lib/content-manager";
 import { GetStaticProps } from "next";
-import Link from "next/link";
 
 interface Props {
 	posts: Post[];
@@ -10,18 +10,11 @@ interface Props {
 export default function HomePage(props: Props) {
 	return (
 		<Page>
-			<h1>Home</h1>
-			{props.posts.map((post) => (
-				<article key={`post-${post.slug}`}>
-					<Link href={`/posts/${post.slug}`}>
-						<a>
-							<h2>{post.meta.title}</h2>
-						</a>
-					</Link>
-					<small>{post.meta.postedAt}</small>
-					<p>{post.meta.summary}</p>
-				</article>
-			))}
+			<div className="max-w-xl mx-auto space-y-4">
+				{[...props.posts, ...props.posts].map((post) => (
+					<PostCard key={post.slug} post={post} />
+				))}
+			</div>
 		</Page>
 	);
 }

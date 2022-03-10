@@ -50,3 +50,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 	return { props: { post, mdxRemoteProps } };
 };
+
+export const config = {
+	unstable_runtimeJS: false,
+};

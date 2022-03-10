@@ -36,3 +36,7 @@ export const getStaticProps: GetStaticProps = async () => {
 	const posts = contentManager.getPosts();
 	return { props: { posts } };
 };
+
+export const config = {
+	unstable_runtimeJS: false,
+};
